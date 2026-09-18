@@ -1,0 +1,178 @@
+/* Base Resets & Global Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: #010736;
+  color: #FCF1D0;
+  cursor: none !important; 
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: #22396F; 
+  color: #FCF1D0;
+}
+
+a, button, input, textarea, select {
+  cursor: none !important;
+}
+
+/* Bulletproof Stroke Typography */
+.stroke-cream {
+  -webkit-text-stroke: 1.5px #FCF1D0;
+  text-stroke: 1.5px #FCF1D0;
+  color: transparent;
+  paint-order: stroke fill;
+}
+
+@media (min-width: 768px) {
+  .stroke-cream {
+    -webkit-text-stroke: 2px #FCF1D0;
+    text-stroke: 2px #FCF1D0;
+  }
+}
+
+/* Rigid Sharp Frame */
+.tech-frame {
+  border: 1px solid rgba(252, 241, 208, 0.45) !important;
+  border-radius: 0px !important;
+  box-shadow: inset 0 0 0 1px rgba(1, 7, 54, 0.6);
+  position: relative;
+}
+
+/* Sub-Pixel Hairline Architectural Graph Paper */
+.paper-tactile-texture {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-color: transparent;
+  opacity: 0.7;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cdefs%3E%3Cpattern id='smallGrid' width='20' height='20' patternUnits='userSpaceOnUse'%3E%3Cpath d='M 20 0 L 0 0 0 20' fill='none' stroke='%23FCF1D0' stroke-width='0.4' stroke-opacity='0.12'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='80' height='80' fill='url(%23smallGrid)'/%3E%3Cpath d='M 80 0 L 0 0 0 80' fill='none' stroke='%23FCF1D0' stroke-width='0.75' stroke-opacity='0.28'/%3E%3C/svg%3E");
+  background-size: 80px 80px;
+}
+
+/* --- AMBIENT TACTICAL PLAYBOOK ANIMATIONS --- */
+
+.tactical-ambient-svg {
+  animation: tacticalPan 40s linear infinite alternate;
+  will-change: transform;
+}
+@keyframes tacticalPan {
+  0% { transform: translate(-48%, -48%) scale(1.05); }
+  100% { transform: translate(-52%, -52%) scale(1.05); }
+}
+
+/* Continuous Drawing Effect (Court Base Lines - Softened for foreground text legibility) */
+.tactical-path {
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  opacity: 0.035; /* Dropped to a soft, non-intrusive watermark */
+  animation: tacticalDraw 18s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+}
+@keyframes tacticalDraw {
+  0% { stroke-dashoffset: 2000; }
+  100% { stroke-dashoffset: 0; }
+}
+
+/* Spinning Center Mark */
+.tactical-spin {
+  opacity: 0.035;
+  animation: tacticalRotate 90s linear infinite;
+}
+@keyframes tacticalRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Marching Arrows */
+.tactical-arrow {
+  opacity: 0.075; /* Visible tactility without blinding the text outline */
+  animation: tacticalMarch 2.5s linear infinite;
+}
+@keyframes tacticalMarch {
+  0% { stroke-dashoffset: 30; }
+  100% { stroke-dashoffset: 0; }
+}
+
+/* Pulsing X Markers & Arrowheads */
+.tactical-pulse {
+  animation: pulseMarker 3.5s ease-in-out infinite alternate;
+}
+@keyframes pulseMarker {
+  0%, 100% { opacity: 0.04; }
+  50% { opacity: 0.11; } /* Gentle pulse peak that never overpowers headline text */
+}
+
+/* Lenis */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Tactical Crosshair Cursor */
+#custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  background-color: #FCF1D0;
+  mix-blend-mode: difference;
+  border-radius: 0px !important;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s cubic-bezier(0.16, 1, 0.3, 1), 
+              height 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#custom-cursor.hover-glow {
+  background-color: transparent !important;
+  border: 1.5px solid #FCF1D0;
+  width: 28px;
+  height: 28px;
+  clip-path: polygon(0 15%, 15% 0, 85% 0, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0 85%);
+}
+
+/* 3D Tilt Card Base */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+.tilt-inner {
+  overflow: hidden;
+  position: relative;
+  border-radius: 0px !important;
+}
+.tilt-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: transform;
+}
+
+/* Drawer Backdrop */
+#drawer-overlay {
+  transition: opacity 0.4s ease;
+}
+#drawer-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Scrollbars */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
